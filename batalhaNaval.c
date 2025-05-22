@@ -1,40 +1,29 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
-
 int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
+    int tabuleiro[10][10] = {0}; //inicializa matriz com 0 (água)
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+    // Posiciona navio horizontal de tamanho 3 na linha 2, coluna 3
 
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+    tabuleiro[2][3] = 3; //linha 2 e coluna 3
+    tabuleiro[2][4] = 3; //linha 2 e coluna 4
+    tabuleiro[2][5] = 3;
+    //usa o nome tabuleiro pois,precisa ser o mesmo para se referir à mesma matriz.
 
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
+    // Posiciona navio vertical de tamanho 3 na linha 5, coluna 5
 
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
+    tabuleiro[5][5] = 3;
+    tabuleiro[6][5] = 3;//linha 6 e coluna 5
+    tabuleiro[7][5] = 3;//linha 7 e coluna 5
+
+    // Exibe o tabuleiro
+    //L representa a linha e C representa a coluna.
+    for (int L = 0; L < 10; L++) {
+        for (int C = 0; C < 10; C++) {
+            printf("%d ", tabuleiro[L][C]); //imprime o valor da posição [L][C] da matriz
+        }
+        printf("\n");
+    }
 
     return 0;
 }
